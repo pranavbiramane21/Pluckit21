@@ -1,0 +1,72 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("../images/13.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+#header {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#n1 a {
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    color: #b22222;
+}
+
+#n1 a:hover {
+    color: darkgreen;
+}
+
+#main-heading {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.login-container {
+    width: 350px;
+    margin: 50px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #b22222;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.login-container button {
+    background: #b22222;
+    color: white;
+    padding: 10px;
+    width: 95%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: darkgreen;
+}

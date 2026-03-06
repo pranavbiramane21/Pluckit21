@@ -1,0 +1,225 @@
+#index{
+     margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#a0, #a1, #a2, #a3, #a4, #a5, #a6, #a7 {
+    margin-right: 15px;
+    margin-left: 2%;
+   
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#a0:hover, #a1:hover, #a2:hover, #a3:hover, #a4:hover, #a5:hover, #a6:hover, #a7:hover {
+    background-color: lightskyblue;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#a0:valid, #a1:visited, #a2:visited, #a3:visited, #a4:visited, #a5:visited, #a6:visited, #a7:visited {
+    color: purple;
+}
+   
+#a0:link, #a1:link, #a2:link, #a3:link, #a4:link, #a5:link, #a6:link, #a7:link {
+    color: black;
+}
+
+#inde{
+    margin-top: 50px;
+    text-align: right;
+    margin-right: 200px;
+    padding-top: 15px;
+}
+
+#starwberry {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 80px;
+    width: 100px;
+    z-index: 10;
+margin-top: 30px;    
+}
+#n1 {
+    margin-top:15px;
+    text-align: right;
+    margin-right: 90px;
+    padding-top: 15px;
+}
+#header
+{
+   border-radius: 55px 15px 55px 15px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+    height: 120px;
+    
+}
+
+#A{
+    margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+#Act{
+   margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    
+}
+#B{
+margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;    
+}
+#C{
+margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;}
+#G{
+margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;    
+}
+#L{
+margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;}
+
+#name{
+margin-right: 15px;
+    margin-left: 2%;
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;}
+
+#left
+{
+    margin-top: 25px;
+    float: left;
+    height: 500px;
+    width: 600px;
+   margin-left: 35px;
+  border-radius: 55px 15px 55px 15px;
+box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.5);
+
+}
+#right {
+    margin-top: -495px;
+    float: right;
+   
+    width: 600px;
+    margin-left: 170px;
+    margin-right: 25px;
+    background-color: #023246;
+    border-radius: 55px 15px 55px 15px;
+    box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.5);
+    padding: 20px; 
+}
+#submit{
+    font-size: 25px;
+    background-color: #e7e7e7;
+    margin-left: 50px;
+}
+#text-overlay {
+    position: absolute;
+    top: 40%;
+    color: white;
+    left: 50%;
+    margin-top: 40px;
+    margin-left: 20px;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+}
+#pp
+{
+    margin-left: 20px;
+    font-family: cursive;
+}
+#ppp
+{
+    color: white;
+    margin-left: 20px;
+    font-family: cursive;
+}
+#ll
+{
+     margin-left: 20px;
+     color: white;
+      font-family: cursive;
+}
+#l2
+{
+    margin-left: 15px; 
+    color: black;
+}
+#submit
+{
+    background-color: blanchedalmond;
+    color: blackl;
+    margin-left: 250px;
+     font-family: cursive;
+     border-radius: 55px 55px 55px 55px;
+       
+        
+}
+#feed
+{
+    margin-left: 250px;
+     font-family: cursive;
+     color: white;
+}
+#get
+{
+    margin-left: 220px;
+     font-family: cursive;
+}
+#feedback {
+   
+    width: 1200px;
+    margin-left: 25px;
+    margin-right: 45px;
+    margin-top: 540px;
+    border-radius: 55px 15px 55px 15px;
+    box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.5);
+    padding: 20px;  
+    background: #fff; 
+}
+
+#immgs{
+    
+}
+
+#heading
+{
+    font-family: cursive;
+    color: black;
+    margin-left: 380px;
+}
