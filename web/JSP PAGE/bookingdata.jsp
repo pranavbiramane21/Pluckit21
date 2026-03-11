@@ -1,3 +1,6 @@
+<%@ page import="java.util.Properties" %>
+<%@ page import="javax.mail.*" %>
+<%@ page import="javax.mail.internet.*" %>
 <%@page import="java.sql.*"%>
 <%@page import="javax.mail.*"%>
 <%@page import="javax.mail.internet.*"%>
