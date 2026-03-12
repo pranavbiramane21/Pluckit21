@@ -1,10 +1,7 @@
 <%@ page import="java.util.Properties" %>
 <%@ page import="javax.mail.*" %>
 <%@ page import="javax.mail.internet.*" %>
-<%@page import="java.sql.*"%>
-<%@page import="javax.mail.*"%>
-<%@page import="javax.mail.internet.*"%>
-<%@page import="java.util.Properties"%>
+<%@ page import="java.sql.*" %>
 
 <%
 
@@ -24,8 +21,9 @@ if(submit != null && submit.equals("Book"))
 {
 try
 {
+
 // DATABASE CONNECTION
-   Class.forName("com.mysql.cj.jdbc.Driver");
+Class.forName("com.mysql.cj.jdbc.Driver");
 
 Connection con = DriverManager.getConnection(
 "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12819535?useSSL=false&allowPublicKeyRetrieval=true",
@@ -33,94 +31,71 @@ Connection con = DriverManager.getConnection(
 "pZ4mgQ6Z11");
 
 Statement st = con.createStatement();
-    
-    
-    
-    
-    
-    
-    //old database 
-   /* Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con = DriverManager.getConnection(
-    "jdbc:mysql://localhost:3306/strawberryfarm","root","");
-    Statement st = con.createStatement(); */
 
-    String query = "INSERT INTO book(name1,email1,mobile1,date1,people1,adults,children,timeslot) VALUES('"
-    + name1 + "','"
-    + email1 + "','"
-    + mobile1 + "','"
-    + date1 + "','"
-    + people1 + "','"
-    + adults1 + "','"
-    + children1 + "','"
-    + timeslot1 + "')";
+String query = "INSERT INTO book(name1,email1,mobile1,date1,people1,adults,children,timeslot) VALUES('"
++ name1 + "','"
++ email1 + "','"
++ mobile1 + "','"
++ date1 + "','"
++ people1 + "','"
++ adults1 + "','"
++ children1 + "','"
++ timeslot1 + "')";
 
-    st.executeUpdate(query);
+st.executeUpdate(query);
 
 
-    
-    // TICKET LINK
-    //new ticket link with render 
-   String ticketLink = "https://pluckit21-13.onrender.com/ticket.jsp?name=" 
+// TICKET LINK
+String ticketLink = "https://pluckit21-13.onrender.com/ticket.jsp?name=" 
 + java.net.URLEncoder.encode(name1,"UTF-8")
 + "&date=" + java.net.URLEncoder.encode(date1,"UTF-8")
 + "&time=" + java.net.URLEncoder.encode(timeslot1,"UTF-8")
 + "&adults=" + adults1
 + "&children=" + children1;
-    
-    
-    
-    //old link
-    
-  /*  String ticketLink = "http://localhost:8080/pluckIt/ticket.jsp?name=" + name1
-+ "&date=" + date1
-+ "&time=" + timeslot1
-+ "&adults=" + adults1
-+ "&children=" + children1; */
-   
-    
-  
 
 
-    // EMAIL SENDING
-    try
-    {
-        final String to = email1;
-        final String from = "biramanepranav04@gmail.com";
-        final String password = "gdyjtlzjnkymlegw";
+// EMAIL SENDING
+try
+{
 
-        Properties props = new Properties();
-        props.put("mail.smtp.host","smtp.gmail.com");
-        props.put("mail.smtp.port","587");
-        props.put("mail.smtp.auth","true");
-        props.put("mail.smtp.starttls.enable","true");
+final String to = email1;
+final String from = "biramanepranav04@gmail.com";
+final String password = "gdyjtlzjnkymlegw";
 
-        Session mailSession = Session.getInstance(props,
-        new javax.mail.Authenticator()
-        {
-            protected PasswordAuthentication getPasswordAuthentication()
-            {
-                return new PasswordAuthentication(from,password);
-            }
-        });
+Properties props = new Properties();
+props.put("mail.smtp.host","smtp.gmail.com");
+props.put("mail.smtp.port","587");
+props.put("mail.smtp.auth","true");
+props.put("mail.smtp.starttls.enable","true");
 
-        MimeMessage message = new MimeMessage(mailSession);
+Session mailSession = Session.getInstance(props,
+new javax.mail.Authenticator()
+{
+protected PasswordAuthentication getPasswordAuthentication()
+{
+return new PasswordAuthentication(from,password);
+}
+});
 
-        message.setFrom(new InternetAddress(from));
-        message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+MimeMessage message = new MimeMessage(mailSession);
 
-        message.setSubject("? Strawberry Farm Booking Confirmation ?");
+message.setFrom(new InternetAddress(from));
+message.setRecipient(Message.RecipientType.TO,new InternetAddress(to));
 
-        message.setContent(
-"<h2>? Strawberry Farm Booking Confirmation</h2>"
+message.setSubject("Strawberry Farm Booking Confirmation","UTF-8");
+
+message.setContent(
+
+"<h2>Strawberry Farm Booking Confirmation</h2>"
+
 + "<p>Hello <b>"+name1+"</b>,</p>"
-+ "<p>Your Strawberry Farm visit is <b>confirmed!</b></p>"
++ "<p>Your Strawberry Farm visit is confirmed.</p>"
 
 + "<p>"
 + "<b>Date:</b> "+date1+"<br>"
 + "<b>Time Slot:</b> "+timeslot1+"<br>"
 + "<b>Adults:</b> "+adults1+"<br>"
-+ "<b>Children:</b> "+children1+""
++ "<b>Children:</b> "+children1
 + "</p>"
 
 + "<p>"
@@ -131,45 +106,32 @@ Statement st = con.createStatement();
 + "</p>"
 
 + "<p>Please arrive 10 minutes before your slot.</p>"
++ "<p>Thank you for booking with us.</p>"
 
-+ "<p>Thank you for booking with us! ?</p>",
-"text/html"
-);
-        
-       /* message.setText(
-        "Hello " + name1 + ",\n\n" +
-        "? Your Strawberry Farm visit is confirmed!\n\n" +
-        "? Visit Date: " + date1 + "\n" +
-        "? Time Slot: " + timeslot1 + "\n" +
-        "? Adults: " + adults1 + "\n" +
-        "? Children: " + children1 + "\n\n" +
-        "? Download your ticket here:\n" +
-        ticketLink + "\n\n" +
-        "? Please arrive 10 minutes before your time slot.\n\n" +
-        "? Thank you for booking with us.\n" +
-        "See you soon at the Strawberry Farm! ?"
-        );  */
+,"text/html");
 
-        Transport.send(message);
-    }
-    catch(Exception mailError)
-    {
-        out.println("Mail Error: " + mailError);
-    }
+Transport.send(message);
 
-    // SUCCESS MESSAGE
-    out.println("<script type='text/javascript'>");
-    out.println("alert('Farm visit booked successfully! Confirmation email sent.');");
-    out.println("window.location='../booking.html';");
-    out.println("</script>");
+}
+catch(Exception mailError)
+{
+out.println("Mail Error: " + mailError.getMessage());
+}
 
-    con.close();
+
+// SUCCESS MESSAGE
+out.println("<script>");
+out.println("alert('Farm visit booked successfully. Confirmation email sent.');");
+out.println("window.location='../booking.html';");
+out.println("</script>");
+
+con.close();
+
 }
 catch(Exception e)
 {
-    out.println("Error = " + e);
+out.println("Error = " + e.getMessage());
 }
-
 
 }
 
