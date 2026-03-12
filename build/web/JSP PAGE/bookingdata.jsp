@@ -60,10 +60,11 @@ Statement st = con.createStatement();
 
     
     // TICKET LINK
-    //new ticket link with render
-    String ticketLink = "https://pluckit21-13.onrender.com/ticket.jsp?name=" + name1
-+ "&date=" + date1
-+ "&time=" + timeslot1
+    //new ticket link with render 
+   String ticketLink = "https://pluckit21-13.onrender.com/ticket.jsp?name=" 
++ java.net.URLEncoder.encode(name1,"UTF-8")
++ "&date=" + java.net.URLEncoder.encode(date1,"UTF-8")
++ "&time=" + java.net.URLEncoder.encode(timeslot1,"UTF-8")
 + "&adults=" + adults1
 + "&children=" + children1;
     
@@ -110,7 +111,32 @@ Statement st = con.createStatement();
 
         message.setSubject("? Strawberry Farm Booking Confirmation ?");
 
-        message.setText(
+        message.setContent(
+"<h2>? Strawberry Farm Booking Confirmation</h2>"
++ "<p>Hello <b>"+name1+"</b>,</p>"
++ "<p>Your Strawberry Farm visit is <b>confirmed!</b></p>"
+
++ "<p>"
++ "<b>Date:</b> "+date1+"<br>"
++ "<b>Time Slot:</b> "+timeslot1+"<br>"
++ "<b>Adults:</b> "+adults1+"<br>"
++ "<b>Children:</b> "+children1+""
++ "</p>"
+
++ "<p>"
++ "<a href='"+ticketLink+"' "
++ "style='background:#ff4d6d;color:white;padding:10px 15px;text-decoration:none;border-radius:5px;'>"
++ "Download Your Ticket"
++ "</a>"
++ "</p>"
+
++ "<p>Please arrive 10 minutes before your slot.</p>"
+
++ "<p>Thank you for booking with us! ?</p>",
+"text/html"
+);
+        
+       /* message.setText(
         "Hello " + name1 + ",\n\n" +
         "? Your Strawberry Farm visit is confirmed!\n\n" +
         "? Visit Date: " + date1 + "\n" +
@@ -122,7 +148,7 @@ Statement st = con.createStatement();
         "? Please arrive 10 minutes before your time slot.\n\n" +
         "? Thank you for booking with us.\n" +
         "See you soon at the Strawberry Farm! ?"
-        );
+        );  */
 
         Transport.send(message);
     }

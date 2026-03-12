@@ -16,40 +16,70 @@ String children = request.getParameter("children");
 <style>
 
 body{
-font-family: Arial;
-background:#f7f7f7;
-text-align:center;
+font-family: 'Segoe UI', Arial;
+background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
 }
 
 .ticket{
-width:400px;
-margin:50px auto;
+width:420px;
 background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0px 8px 25px rgba(0,0,0,0.3);
+}
+
+.header{
+background:#ff4d6d;
+color:white;
 padding:20px;
-border-radius:10px;
-border:3px dashed #ff4d6d;
-box-shadow:0px 0px 10px gray;
+font-size:22px;
+font-weight:bold;
+letter-spacing:1px;
 }
 
-h2{
-color:#ff4d6d;
+.ticket-body{
+padding:25px;
 }
 
-.details{
-text-align:left;
-margin-top:20px;
+.details p{
 font-size:18px;
+margin:10px 0;
+border-bottom:1px dashed #ccc;
+padding-bottom:5px;
+}
+
+.note{
+margin-top:15px;
+background:#fff3cd;
+padding:10px;
+border-left:5px solid #ffc107;
+font-size:15px;
+}
+
+.footer{
+text-align:center;
+padding:20px;
 }
 
 button{
-margin-top:20px;
-padding:10px 20px;
+padding:12px 25px;
 background:#ff4d6d;
 color:white;
 border:none;
-border-radius:5px;
+border-radius:6px;
 font-size:16px;
 cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#e63956;
+transform:scale(1.05);
 }
 
 </style>
@@ -79,19 +109,31 @@ link.click();
 
 <div class="ticket">
 
-<h2>🍓 Strawberry Farm Entry Ticket 🍓</h2>
+<div class="header">
+🍓 Strawberry Farm Entry Ticket
+</div>
+
+<div class="ticket-body">
 
 <div class="details">
 
-<p><b>Name:</b> <%=name%></p>
-<p><b>Date:</b> <%=date%></p>
-<p><b>Time:</b> <%=time%></p>
-<p><b>Adults:</b> <%=adults%></p>
-<p><b>Children:</b> <%=children%></p>
+<p><b>Name :</b> <%=name%></p>
+<p><b>Date :</b> <%=date%></p>
+<p><b>Time :</b> <%=time%></p>
+<p><b>Adults :</b> <%=adults%></p>
+<p><b>Children :</b> <%=children%></p>
 
 </div>
 
+<div class="note">
+<b>Important Note:</b> A child below 12 years has free entry in the farm.
+</div>
+
+</div>
+
+<div class="footer">
 <button onclick="downloadTicket()">Download Ticket</button>
+</div>
 
 </div>
 
